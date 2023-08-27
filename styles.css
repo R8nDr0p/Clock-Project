@@ -20,7 +20,6 @@ body{
     background-color: transparent;
     right: 145px;
     bottom: 117px;
-    transform: translate(50% 76%);
     /* ito ang gamitin para hindi siya mag tilt or rotate sa gitna */
     transform-origin: 50% 76% 0;
     /* transition: transform 0.5s;
@@ -44,18 +43,17 @@ body{
 }
 
 #hours-hand{
-    --rotation: 270;
+    --rotation: 30;
     position: absolute;
     height: fit-content;
     width: fit-content;
     background-color:transparent;
     left: 143px;
     bottom: 127px;
-    transform: translateX(50%);
     transform: rotate(calc(var(--rotation) * 1deg));
     /* ito ang gamitin para hindi siya mag tilt or rotate sa gitna */
-    transform-origin: 50% 72%;
+    transform-origin: 50% 72% 0;
 }
 #hours-hand img{
-    height: 75px;
+    height: 76px;
 }
