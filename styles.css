@@ -1,0 +1,61 @@
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    background-color: #006039;
+}
+
+.clock{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-image: url(./assets/img/Rolex\ Day-Date\ dial-no-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#seconds-hand{
+    position: absolute;
+    background-color: transparent;
+    right: 145px;
+    bottom: 117px;
+    transform: translate(50% 76%);
+    /* ito ang gamitin para hindi siya mag tilt or rotate sa gitna */
+    transform-origin: 50% 76% 0;
+    /* transition: transform 0.5s;
+    transform: translateX(-50%); */
+}
+
+#seconds-hand-img{
+    height: 130px;
+}
+
+
+#minutes-hand{
+    position: absolute;
+    height: 100px;
+    width: 2px;
+    background-color: gold;
+    right: 50%;
+    bottom: 50%;
+    /* ito ang gamitin para hindi siya mag tilt or rotate sa gitna */
+    transform-origin: bottom;
+}
+
+#hours-hand{
+    --rotation: 270;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    background-color:transparent;
+    left: 143px;
+    bottom: 127px;
+    transform: translateX(50%);
+    transform: rotate(calc(var(--rotation) * 1deg));
+    /* ito ang gamitin para hindi siya mag tilt or rotate sa gitna */
+    transform-origin: 50% 72%;
+}
+#hours-hand img{
+    height: 75px;
+}
