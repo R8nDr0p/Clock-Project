@@ -20,7 +20,29 @@ function getTime() {
   requestAnimationFrame(getTime);
 }
 
+const weekDay = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
 // getTime();
 // setInterval(getTime, 1000);
+weekDay.forEach((day, index) => {
+  const div = document.createElement("div");
+  div.setAttribute("class", `day day${index}`);
 
+  for (let i = 0; i < day.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = day[i];
+    span.style.position = "inline-block";
+    span.style.transform = "rotate(90deg)";
+    div.appendChild(span);
+  }
+  document.querySelector(".dial-day").appendChild(div);
+});
 getTime();
