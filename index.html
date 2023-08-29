@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analog Clock</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
   </head>
   <body>
     <div class="clock">
+      <div class="clock-dial">
+        <img
+          id="clock-dial-img"
+          src="./assets/img/Rolex Day-Date dial-no-bg.png"
+          alt=""
+        />
+      </div>
+      <div class="middle-piece"></div>
       <div id="seconds-hand">
         <img
           id="seconds-hand-img"
@@ -15,7 +24,13 @@
           alt="seconds hand hours-hand-image  "
         />
       </div>
-      <div id="minutes-hand"></div>
+      <div id="minutes-hand">
+        <img
+          id="minutes-hand-image"
+          src="./assets/img/rolex%20day-date-hands-minutes-hand.png"
+          alt="minutes hand image"
+        />
+      </div>
       <div class="" id="hours-hand">
         <img
           id="hours-hand-image"
@@ -23,8 +38,17 @@
           alt=""
         />
       </div>
-      <div id="center"></div>
+      <div id="canv" class="dial-day">
+        <!-- <div class="day day1">Monday</div>
+        <div class="day day2"></div>
+        <div class="day day3">Wednesday</div>
+        <div class="day day4">Thursday</div>
+        <div class="day day5">Friday</div>
+        <div class="day day6">Saturday</div>
+        <div class="day day7">Sunday</div> -->
+      </div>
     </div>
+    <!-- <script src="circletype.min.js"></script> -->
     <script src="app.js"></script>
   </body>
 </html>
