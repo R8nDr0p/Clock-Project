@@ -82,13 +82,13 @@ body{
 .dial-day{
     position: absolute;
     top: 10%;
-    left: 147px;
-    transform: translateX(-50%);
+    left: 149px;
+    transform: translateX(-50%) rotate(-54deg);
     width: 245px;
     height: 245px;
     background-color: antiquewhite;
     border-radius: 50%;
-    /* z-index: -10; */
+    z-index: -10;
 }
 
 .dial-day .day{
@@ -115,4 +115,9 @@ body{
 }
 .day6{
     transform: rotate(calc(51.43*6*1deg));
+}
+
+.day span{
+    font-family: 'Eb Garamond',cursive;
+    font-size: 15px;
 }
