@@ -37,7 +37,7 @@ const weekDay = [
   },
   {
     name: "Tuesday",
-    rem: 0.5,
+    rem: 0.4,
   },
   {
     name: "Wednesday",
@@ -70,7 +70,7 @@ weekDay.forEach((day, index) => {
     span.textContent = letter;
     span.style.display = "inline-block";
     span.style.paddingTop = `${day.rem}rem`;
-    const deg = 350 + i * 6;
+    const deg = 350 + i * 5;
     span.style.transform = `rotate(${deg}deg)`;
     div.appendChild(span);
   }
