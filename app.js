@@ -10,6 +10,8 @@ function getTime() {
   const minutes = now.getMinutes();
   const hours = now.getHours();
   const day = now.getDay();
+  const dayMonth = now.toString().padStart("2", 0);
+  console.log(dayMonth);
 
   const secondsRotation = (seconds + milliSeconds / 1000) * 6;
   const minutesRotation = ((minutes + seconds / 60) / 60) * 360;
@@ -45,24 +47,23 @@ const weekDay = [
   },
   {
     name: "Thursday",
-    rem: 0.25,
+    rem: 0.6,
   },
   {
     name: "Friday",
-    rem: 0.5,
+    rem: 0.45,
   },
   {
     name: "Saturday",
     rem: 0.25,
   },
 ];
-
 // getTime();
 // setInterval(getTime, 1000);
 weekDay.forEach((day, index) => {
   const div = document.createElement("div");
   div.setAttribute("class", `day day${index}`);
-  console.log(day.name);
+  // console.log(day.name);
   for (let i = 0; i < day.name.length; i++) {
     const span = document.createElement("span");
     const letter = day.name[i];
@@ -76,4 +77,22 @@ weekDay.forEach((day, index) => {
   }
   document.querySelector(".dial-day").appendChild(div);
 });
+
+for (let i = 1; i <= 31; i++) {
+  const div = document.createElement("div");
+  const span = document.createElement("span");
+  const rotateCalc = 11.62 * i;
+
+  div.setAttribute("class", `day month${i}`);
+  div.style.transform = `rotate(${rotateCalc}deg)`; // Rotate the div
+
+  span.textContent = i;
+  span.style.transformOrigin = "center";
+  span.style.display = "inline-block";
+  span.style.transform = `rotate(${-rotateCalc}deg)`; // Counter-rotate the span
+
+  div.appendChild(span);
+  document.querySelector(".dial-month").appendChild(div);
+}
+
 getTime();
