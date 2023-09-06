@@ -1,9 +1,17 @@
 body{
     display:flex;
+    flex-wrap: wrap;
     justify-content:center;
     align-items: center;
     height: 100vh;
     background-color: #006039;
+}
+header{
+  text-align: center;
+}
+header h1{
+  color: antiquewhite;
+  font-size: 4rem;
 }
 
 .clock {
@@ -123,7 +131,7 @@ body{
 
 .month-container {
   position: relative;
-  top: -79%;
+  top: -80%;
 }
 .dial-month {
   position: absolute;
@@ -133,7 +141,7 @@ body{
   border-radius: 50%;
   /* top: 20%; */
   /* bottom: 0; */
-  left: 49%;
+  left: 47%;
   transform: translateX(-50%);
   z-index: -5;
 }

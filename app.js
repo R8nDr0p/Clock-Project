@@ -20,8 +20,8 @@ function getTime() {
   const degPerDayofWeek = 360 / 7;
   const degPerDayofMonth = 360 / 31;
   const currDay = -day * degPerDayofWeek;
-  const currDayMonth = -dayOfMonth + 4 * degPerDayofMonth;
-  console.log(currDayMonth);
+  const currDayMonth = (-dayOfMonth + 7) * degPerDayofMonth;
+  console.log(-dayOfMonth + 7);
 
   secondsHand.style.transform = `rotate(${secondsRotation}deg)`;
   minutesHand.style.transform = `rotate(${minutesRotation}deg)`;
@@ -83,6 +83,7 @@ weekDay.forEach((day, index) => {
   document.querySelector(".dial-day").appendChild(div);
 });
 
+// dial-day-month feature
 for (let i = 1; i <= 31; i++) {
   const div = document.createElement("div");
   const span = document.createElement("span");
@@ -94,7 +95,7 @@ for (let i = 1; i <= 31; i++) {
   span.textContent = i;
   span.style.transformOrigin = "center";
   span.style.display = "inline-block";
-  span.style.transform = `rotate(${-79}deg)`; // Counter-rotate the span
+  span.style.transform = `rotate(${-80}deg)`; // Counter-rotate the span
 
   div.appendChild(span);
   document.querySelector(".dial-month").appendChild(div);
