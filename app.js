@@ -2,6 +2,7 @@ const secondsHand = document.getElementById("seconds-hand");
 const minutesHand = document.getElementById("minutes-hand");
 const hoursHand = document.getElementById("hours-hand");
 const dayDial = document.querySelector(".dial-day");
+const dayOfMonthDial = document.querySelector(".dial-month");
 
 function getTime() {
   const now = new Date();
@@ -10,20 +11,23 @@ function getTime() {
   const minutes = now.getMinutes();
   const hours = now.getHours();
   const day = now.getDay();
-  const dayMonth = now.toString().padStart("2", 0);
-  console.log(dayMonth);
+  const dayOfMonth = now.getDate();
+  console.log(dayOfMonth);
 
   const secondsRotation = (seconds + milliSeconds / 1000) * 6;
   const minutesRotation = ((minutes + seconds / 60) / 60) * 360;
   const hoursRotation = ((hours + minutes / 60) / 12) * 360;
   const degPerDayofWeek = 360 / 7;
+  const degPerDayofMonth = 360 / 31;
   const currDay = -day * degPerDayofWeek;
-  // console.log(currDay);
+  const currDayMonth = -dayOfMonth + 4 * degPerDayofMonth;
+  console.log(currDayMonth);
 
   secondsHand.style.transform = `rotate(${secondsRotation}deg)`;
   minutesHand.style.transform = `rotate(${minutesRotation}deg)`;
   hoursHand.style.transform = `rotate(${hoursRotation}deg)`;
   dayDial.style.transform = `translateX(-50%) rotate(${currDay}deg)`;
+  dayOfMonthDial.style.transform = `translateX(-50%) rotate(${currDayMonth}deg)`;
   // request animation frame para smooth ang rotation ng second hand parang automatic o mechanical watch talga siya
   requestAnimationFrame(getTime);
 }
@@ -89,7 +93,7 @@ for (let i = 1; i <= 31; i++) {
   span.textContent = i;
   span.style.transformOrigin = "center";
   span.style.display = "inline-block";
-  span.style.transform = `rotate(${-rotateCalc}deg)`; // Counter-rotate the span
+  span.style.transform = `rotate(${-79}deg)`; // Counter-rotate the span
 
   div.appendChild(span);
   document.querySelector(".dial-month").appendChild(div);
