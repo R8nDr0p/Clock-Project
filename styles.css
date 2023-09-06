@@ -1,4 +1,43 @@
 body{
+    display: flex;
+    flex-wrap: wrap;
+}
+@media  only screen and (min-width: 600px) {
+    body{
+        flex-wrap: nowrap;
+    }
+    
+}
+header{
+    text-align: center;
+}
+header h1{
+    color: antiquewhite;
+    font-size: 5rem;
+}
+header .quote::before{
+    content: "\201C";
+    font-size: 2rem;
+    color: antiquewhite;
+}
+header .quote{
+    font-size: 2rem;
+    color: antiquewhite;
+}
+header .quote::after{
+    content: "\201D";
+    font-size: 2rem;
+    color: antiquewhite;
+}
+header .quotee{
+    font-size: 1.6rem;
+    color: antiquewhite;
+}
+header .info{
+    font-size: 1.2rem;
+    color: antiquewhite;
+}
+body{
     display:flex;
     justify-content:center;
     align-items: center;
