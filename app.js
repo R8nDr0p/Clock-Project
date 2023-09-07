@@ -51,7 +51,7 @@ const weekDay = [
   },
   {
     name: "Thursday",
-    rem: 0.25,
+    rem: 0.7,
   },
   {
     name: "Friday",
